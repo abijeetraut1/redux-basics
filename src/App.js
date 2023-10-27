@@ -1,12 +1,10 @@
 import './App.css';
-import Todos from './component/Todos';
-import AddTodos from './component/AddTodos';
+import Form from "./compnent/Form.js"
 
 function App() {
   return (
-    <div className="App">
-      <Todos/>
-      <AddTodos/>      
+    <div className="App">   
+      <Form />
     </div>
   );
 }
