@@ -1,19 +1,31 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import {
+    createSlice,
+    nanoid
+} from "@reduxjs/toolkit";
 
 export const authSlice = createSlice({
     name: "auth",
-    initialState: {authState: []},
-    reducers:{
+    initialState: {
+        authState: []
+    },
+    reducers: {
         login: (state, action) => {
-            const dataArr = {
+            const newData = {
                 id: nanoid(),
-                email: action.payload.email,
-                password: action.payload.password 
+                auth: {
+                    email: action.payload.email,
+                    password: action.payload.password
+                }    
             }
-            state.authState.push(dataArr);
+            state.authState.push(newData)
+        },
+        removeAuth:(state, action) => {
+            state.authState = state.authState.filter(todo => todo.id !== action.payload);
         }
     }
 })
 
-export const {login} = authSlice.actions;
+export const {
+    login, removeAuth
+} = authSlice.actions;
 export default authSlice.reducer;
