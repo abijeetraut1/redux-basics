@@ -4,7 +4,7 @@ import Form from "./compnent/Form.js"
 function App() {
   return (
     <div className="App">   
-      <Form />
+      <Form/>
     </div>
   );
 }

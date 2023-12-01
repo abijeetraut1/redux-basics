@@ -17,15 +17,14 @@ export const authSlice = createSlice({
                     password: action.payload.password
                 }    
             }
+
+            // console.log(newData)
             state.authState.push(newData)
-        },
-        removeAuth:(state, action) => {
-            state.authState = state.authState.filter(todo => todo.id !== action.payload);
         }
     }
 })
 
 export const {
-    login, removeAuth
+    login
 } = authSlice.actions;
 export default authSlice.reducer;
